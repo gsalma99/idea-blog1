@@ -1,35 +1,14 @@
-const path = require('path');
-const session = require('express');
-const express = require('express');
-const helpers = require('./utils/helpers');
-const exphbs = require('express-handlebars');
+const Sequelize = require('sequelize');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+require('dotenv').config();
 
-const sequelize = require('./config/config');
-const sequelizeStore = require('connect-sessions-sequlize')(session.Store);
+const sequelize = process.env.JAWSBD_URL
+    ? new Sequelize(process.env.JAWSDB_URL)
+    : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+        host: 'localhost',
+        dialect: 'mysql',
+        port: 3306
+      });
 
-const sess = {
-    secret: 'Super secret secret',
-    cookie: {
-        maxAge: 3000,
-        httpOnly: true, 
-        secure: false,
-        sameSite: 'strict',
-    },
-    resave: false,
-    saveUninitialized: true,
-    store: new sequelizeStore({
-        db:sequelize
-    })
-};
-
-app.use(session(sess));
-
-const hbs = exphbs.create({ helpers });
-
-app.set('view engine', 'handlebars');
-app.engine('handlebars', hbs.engine);
-
+module.exports = sequelize;
 
