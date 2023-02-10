@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Idea Blog</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="d-flex min-vh-100">
+  <nav class="navbar">
+    <ul class="d-flex justify-content-around">
+      <li class="nav-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="/dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" id="logout-link">Logout</a>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="hero d-flex align-items-center">
+    <h1 class="app-title">
+      <a href="/">The IdeaB log</a>
+    </h1>
+  </header>
+
+  <main class="container my-5">
+    {{{body}}}
+  </main>
+
+  <footer class="d-flex justify-content-center bg-light py-3">
+    &copy; The Idea Blog
+  </footer>
+</body>
+
+</html>
+<script src="/js/logout.js"></script>

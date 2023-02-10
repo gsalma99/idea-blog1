@@ -1,0 +1,8 @@
+<ul class="posts">
+  {{#each posts}}
+    <li class="flex-row justify-space-between">
+      <a href="/dashboard/edit/{{id}}">{{title}}</a>
+      <span>{{format_date createdAt}}</span>
+    </li>
+  {{/each}}
+</ul>

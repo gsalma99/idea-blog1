@@ -1,0 +1,15 @@
+<div class="posts-container">
+  {{#each posts}}
+    <div class="post-item">
+      <div class="post-header">
+        <h2><a href="/post/{{id}}">{{title}}</a></h2>
+        <div class="post-meta">
+          <span>By {{User.username}}</span>
+          <span>{{format_date createdAt}}</span>
+        </div>
+      </div>
+      <div class="post-body">{{body}}</div>
+    </div>
+  {{/each}}
+</div>
+

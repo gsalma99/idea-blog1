@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Idea Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <header class="navbar">
+    <nav class="nav justify-content-center">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/dashboard">Dashboard</a>
+      <a class="nav-link" href="#" id="logout-link">Logout</a>
+    </nav>
+  </header>
+  <section class="hero d-flex justify-content-center align-items-center">
+    <h1 class="app-title text-center">
+      <a href="/dashboard">Welcome to your Dashboard</a>
+    </h1>
+  </section>
+  <main class="my-5 container">
+    {{{body}}}
+  </main>
+  <footer class="footer d-flex justify-content-center mt-5">
+    <a href="/dashboard/new">➕ Create a new post!</a>
+  </footer>
+  <script src="/js/logout.js"></script>
+</body>
+</html>
