@@ -3,12 +3,9 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const helpers = require("./utils/helpers");
-global.User = require("./models/User");
-global.Post = require("./models/Post");
-global.withAuth = require("./utils/auth");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const sequelize = require("./config/config");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -39,8 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(require("./controllers/api"));
-// app.use(require('../models'));
+app.use(require("./controllers"));
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
